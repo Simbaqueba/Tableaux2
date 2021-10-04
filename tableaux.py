@@ -122,15 +122,16 @@ def par_complementario(l):
 	# Esta función determina si una lista de solo literales
 	# contiene un par complementario
 	# Input: l, una lista de literales
-	print(l)
+	
+	lnew= []
 
-	print(str(l[1]) == str(complemento(l[3])))
-	print ()
+	for i in l:
+		lnew.append(Inorder(i))
+
 	for i in l:
 		x = complemento(i)
-		print(i, x)
 	
-		if x in l:
+		if Inorder(x) in lnew:
 			return True
 			break
 	
@@ -139,6 +140,7 @@ def par_complementario(l):
 	# Output: True/False
 
 	pass
+
 
 def es_literal(f):
 	# Esta función determina si el árbol f es un literal
